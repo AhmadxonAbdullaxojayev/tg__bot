@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LanguageInjectionConfiguration">
+    <injection language="DockerIgnore" injector-id="java">
+      <display-name>SendVideo.setVideo (org.telegram.telegrambots.meta.api.methods.send)</display-name>
+      <single-file value="false" />
+      <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("setVideo").withParameters("org.telegram.telegrambots.meta.api.objects.InputFile").definedInClass("org.telegram.telegrambots.meta.api.methods.send.SendVideo"))]]></place>
+    </injection>
+  </component>
+</project>
