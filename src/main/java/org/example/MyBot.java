@@ -91,22 +91,6 @@ public class MyBot extends TelegramLongPollingBot {
             }
 
 
-//            }  else if (update.hasCallbackQuery()){
-//            String chatId = String.valueOf(Long.valueOf(update.getCallbackQuery().getFrom().getId().toString()));
-//            String data = update.getCallbackQuery().getData();
-//            TelegramUser user = saveUser(chatId);
-//            if (user.getStep().equals(BotConstant.SELECT_LANG)){
-//                user.setSelectLang(BotQuery.UZ_SELECT);
-//                if (data.equals(BotQuery.UZ_SELECT)){
-//                    setText(chatId,"Habaringizni qoldiring ");
-//                } else if (data.equals(BotQuery.RU_SELECT)) {
-//                    user.setSelectLang(BotQuery.RU_SELECT);
-//                    setText(chatId,"Оставьте свое сообщение ");
-//                }
-//                user.setStep(BotConstant.WRITE_MSG);
-//            }
-
-
         } else if (update.hasCallbackQuery()) {
             String chatId = update.getCallbackQuery().getMessage().getChatId().toString();
             TelegramUser user = getMe(chatId);
@@ -166,7 +150,7 @@ public class MyBot extends TelegramLongPollingBot {
                             "0-100 4.4 sekund\n" +
                             "BezinBak: 70\n" +
                             "OtKuchi: 500 ta\n" +
-                            "Narxi: 250 000$");
+                            "Narxi: 2500 000$");
 
                     InlineKeyboardMarkup inlineKeyboardMarkup = new InlineKeyboardMarkup();
                     List<InlineKeyboardButton> rd = new ArrayList<>();
@@ -292,7 +276,7 @@ public class MyBot extends TelegramLongPollingBot {
                 } else {
                     try {
                         int paymentAmount = Integer.parseInt(messageText);
-                        if (paymentAmount >= 250000) {
+                        if (paymentAmount >= 2500000) {
                             SendMessage confirmationMessage = new SendMessage(chatId, "To'lov muvaffaqiyatli amalga oshirildi!");
                             execute(confirmationMessage);
 
@@ -300,14 +284,19 @@ public class MyBot extends TelegramLongPollingBot {
                             videoMessage.setChatId(update.getMessage().getChatId());
 
 
-                            String videoFilePath = "C:\\Users\\user\\IdeaProjects\\Tg_bot\\src\\main\\java\\Video";
+                            String videoFilePath = "C:\\Users\\user\\IdeaProjects\\Tg_bot\\src\\main\\java\\images\\zzz.mp4";
                             File videoFile = new File(videoFilePath);
                             InputFile inputFile = new InputFile(videoFile);
                             videoMessage.setVideo(inputFile);
                             videoMessage.setCaption("Siz pulizga uxladiz");
                             execute(videoMessage);
 
-                        } else {
+
+
+
+                        }
+
+                        else {
                             SendMessage insufficientAmountMessage = new SendMessage(chatId, "To'lov summasi yetarli emas. Iltimos, to'liq summani kiriting:");
                             execute(insufficientAmountMessage);
 
